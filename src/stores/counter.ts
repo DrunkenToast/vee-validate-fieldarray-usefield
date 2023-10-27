@@ -3,7 +3,6 @@ import { defineStore } from 'pinia'
 
 export const useStore = defineStore('counter', () => {
     const objs = ref({
-        title: 'test',
         items: [
             {
                 name: 'test'

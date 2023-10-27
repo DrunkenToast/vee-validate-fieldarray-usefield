@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useStore } from '@/stores/counter'
 import { storeToRefs } from 'pinia'
-import { useFieldArray, useForm } from 'vee-validate'
+import { useForm } from 'vee-validate'
 import { watch } from 'vue'
 import ItemFields from './ItemFields.vue'
 
@@ -17,18 +17,17 @@ watch(
     },
     { immediate: true }
 )
-
-const { fields } = useFieldArray('items')
 </script>
 
 <template>
-    {{ objs }}
-    {{ values }}
+    Store values: {{ objs }}
+    <br />
+    Form values: {{ values }}
+    <br />
     <form>
-        <input type="text" name="title" />
-        <ItemFields />
         <button type="button" @click="store.addItem">add</button>
         <button type="button" @click="store.removeItem">remove</button>
+        <ItemFields />
     </form>
 </template>
 

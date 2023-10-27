@@ -8,6 +8,8 @@ const { fields } = useFieldArray('items')
 <template>
     <div v-for="(field, index) in fields" :key="field.key">
         <Input :name="`items[${index}].name`" />
+        <!-- NOTE: uncomment below and comment above for it to work -->
+        <!-- <input type="text" :value="(field.value as any).name" /> -->
     </div>
 </template>
 
